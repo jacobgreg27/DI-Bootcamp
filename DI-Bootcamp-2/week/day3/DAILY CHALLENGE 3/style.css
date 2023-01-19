@@ -1,0 +1,42 @@
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sq-yellow{
+    background-color: yellow;
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+}
+
+main{
+     display: flex;
+     flex-direction:row;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 20px;
+    gap: 90px;
+
+}
+.col-2{
+    flex-grow: 1;
+}
+
+.col-2{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 200px;
+    gap: 90px;
+}
