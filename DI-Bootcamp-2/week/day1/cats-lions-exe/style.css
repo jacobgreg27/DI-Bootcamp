@@ -1,0 +1,51 @@
+.body{
+    padding: 0;
+    margin: 0;
+    padding-top: 40%;
+}
+
+.media{
+    width: 100%;
+    height: auto;
+}
+
+.highlight{
+    padding: 0 2px 0 2px;
+    background-color: yellow;
+    border-radius: 2px;
+}
+
+.table-wrapper{
+    padding: 0 40px 0 40px;
+}
+
+table{
+    width: 100%;
+}
+
+.cell-bordered{
+    border: 1px solid black;
+    
+}
+
+.cell-centered{
+    text-align:center;
+}
+
+.cell-red{
+    color: red;
+    border-color: red;
+    
+}
+
+.cell-half-width{
+    width: 50%;
+}
+
+.cell-padded{
+    padding: 8px 3px 8px 3px;
+}
+
+.cell-seperator{
+    padding-bottom: 20px;
+}
