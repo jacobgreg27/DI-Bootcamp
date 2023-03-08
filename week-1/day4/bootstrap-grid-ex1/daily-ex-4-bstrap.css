@@ -1,0 +1,8 @@
+.container{
+    margin: 10px 25px;
+    padding: 5px 10px;
+}
+
+.card.h1{
+    float:left;
+}
