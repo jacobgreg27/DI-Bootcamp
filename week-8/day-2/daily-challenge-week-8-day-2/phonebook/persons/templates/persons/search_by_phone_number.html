@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search by Phone Number</title>
+</head>
+
+<body>
+    <h1>Search by Phone Number</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number">
+        <button type="submit">Search</button>
+    </form>
+</body>
+
+</html>
