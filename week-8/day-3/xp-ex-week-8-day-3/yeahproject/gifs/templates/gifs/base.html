@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}Gifs App{% endblock %}</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'gifs:homepage' %}">Home</a>
+        <a href="{% url 'gifs:add_gif' %}">Add Gif</a>
+        <a href="{% url 'gifs:add_category' %}">Add Category</a>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>
