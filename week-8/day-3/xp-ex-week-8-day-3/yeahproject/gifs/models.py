@@ -18,6 +18,7 @@ from django.db import models
 class Gif(models.Model):
     title = models.CharField(max_length=255)
     url = models.URLField()
+    likes = models.IntegerField(default=0)
     uploader_name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     categories = models.ManyToManyField('Category', related_name='gifs')

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'gifs/base.html' %}
+    
+    {% block content %}
+    {% if gifs %}
+    <h1>Popular Gifs</h1>
+    <ul>
+        {% for gif in gifs %}
+        <li>
+            <a href="{% url 'gifs:detail' gif.pk %}">{{ gif.title }}</a>
+            <span>Likes: {{ gif.likes }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No popular gifs found.</p>
+    {% endif %}
+    {% endblock %}
+
+</body>
+</html>

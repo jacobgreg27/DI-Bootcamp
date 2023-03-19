@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
+from django.db.models import F
 
 
 
@@ -24,6 +25,9 @@ from .forms import GifForm, CategoryForm
 # Gif view: this views accepts a gif id and display that specific gifs details on the page. Display each gif in an img tag.
 
 # Create routes and templates in accordance to the views.
+def popular_gifs(request):
+    gifs = Gif.objects.annotate(like_diff=F('likes')-1).filter(like_diff__gt=0).order_by('-likes')
+    return render(request, 'gifs/popular_gifs.html', {'gifs': gifs})
 
 def homepage(request):
     gifs = Gif.objects.all()

@@ -13,8 +13,20 @@
 {% block content %}
 {% for gif in gifs %}
 <img src="{{ gif.url }}" alt="{{ gif.title }}">
+<div>
+    <form method="POST" action="{% url 'gifs:like' gif.id %}">
+        {% csrf_token %}
+        <button type="submit" name="action" value="like">Like</button>
+    </form>
+    <form method="POST" action="{% url 'gifs:like' gif.id %}">
+        {% csrf_token %}
+        <button type="submit" name="action" value="dislike">Dislike</button>
+    </form>
+    <p>Likes: {{ gif.likes }}</p>
+</div>
 {% endfor %}
 {% endblock %}
+
 
 
     
