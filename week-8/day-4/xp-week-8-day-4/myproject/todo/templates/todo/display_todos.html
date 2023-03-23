@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>All Todos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Details</th>
+            <th>Date Created</th>
+            <th>Deadline Date</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for todo in todos %}
+        <tr>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.details }}</td>
+            <td>{{ todo.date_creation }}</td>
+            <td>{{ todo.deadline_date }}</td>
+            <td>{{ todo.category.name }}</td>
+            <td>
+                {% if not todo.has_been_done %}
+                <form method="POST" action="{% url 'todo:complete_todo' todo.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Done</button>
+                </form>
+                {% else %}
+                Done
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
